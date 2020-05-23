@@ -33,7 +33,9 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table schema="ecommerceone" tableName="wishlist" domainObjectName="wishlist">
+
+        <table schema="ecommerceone" tableName="product" domainObjectName="product">
         </table>
+
     </context>
 </generatorConfiguration>
