@@ -20,7 +20,7 @@ public class ProductController {
     public String listPage(Model model){
         List<product> allProducts = productService.findAllProducts();
         model.addAttribute("product", allProducts);
-        return "product/product-view";
+        return "Demo/product-view";
     }
 
 }

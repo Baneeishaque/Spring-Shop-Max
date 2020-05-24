@@ -19,7 +19,7 @@ public class CustomerController {
     @GetMapping("view")
     public String listPage(Model model){
         List<customer> allCustomers = customerService.findAllProducts();
-        model.addAttribute("product", allCustomers);
-        return "product/product-view";
+        model.addAttribute("customer", allCustomers);
+        return "Demo/customerregisterview";
     }
 }
