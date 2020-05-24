@@ -26,7 +26,7 @@ public class CustomerService {
     }
 
     public void saveOrUpdate(customer cust) {
-        if (cust.getCustomerId() != null) {
+        if (cust.getCustomeriid() != null) {
             customermapper.updateByPrimaryKey(cust);
         } else {
             customermapper.insert(cust);

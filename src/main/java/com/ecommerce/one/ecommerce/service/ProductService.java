@@ -26,7 +26,7 @@ public class ProductService {
     }
 
     public void saveOrUpdate(product prod) {
-        if (prod.getId() != null) {
+        if (prod.getProductid() != null) {
             productmapper.updateByPrimaryKey(prod);
         } else {
             productmapper.insert(prod);

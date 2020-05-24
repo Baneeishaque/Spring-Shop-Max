@@ -10,7 +10,7 @@
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/ecommerce?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useSSL=false"
+                        connectionURL="jdbc:mysql://localhost:3306/?serverTimezone=Asia/Chongqing#/ecommerceone?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useSSL=false"
                         userId="root"
                         password="1234">
             <property name="useInformationSchema" value="true"/>
@@ -34,8 +34,25 @@
         </javaClientGenerator>
 
 
+        <table schema="ecommerceone" tableName="a" domainObjectName="a">
+        </table>
+        <table schema="ecommerceone" tableName="address" domainObjectName="address">
+        </table>
+        <table schema="ecommerceone" tableName="admin" domainObjectName="admin">
+        </table>
+        <table schema="ecommerceone" tableName="customer" domainObjectName="customer">
+        </table>
+        <table schema="ecommerceone" tableName="orders" domainObjectName="orders">
+        </table>
+        <table schema="ecommerceone" tableName="payment" domainObjectName="payment">
+        </table>
         <table schema="ecommerceone" tableName="product" domainObjectName="product">
         </table>
+        <table schema="ecommerceone" tableName="shipping" domainObjectName="shipping">
+        </table>
+        <table schema="ecommerceone" tableName="wishlist" domainObjectName="wishlist">
+        </table>
+
 
     </context>
 </generatorConfiguration>
