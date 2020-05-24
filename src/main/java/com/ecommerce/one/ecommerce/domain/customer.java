@@ -10,7 +10,7 @@ public class customer {
      *
      * @mbg.generated Sat May 23 21:26:19 CST 2020
      */
-    private Short customerId;
+    private Integer customerId;
 
     /**
      *
@@ -55,7 +55,7 @@ public class customer {
      *
      * @mbg.generated Sat May 23 21:26:19 CST 2020
      */
-    private Short addressId;
+    private Integer addressId;
 
     /**
      *
@@ -92,7 +92,7 @@ public class customer {
      *
      * @mbg.generated Sat May 23 21:26:19 CST 2020
      */
-    public Short getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
@@ -104,7 +104,7 @@ public class customer {
      *
      * @mbg.generated Sat May 23 21:26:19 CST 2020
      */
-    public void setCustomerId(Short customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
@@ -212,7 +212,7 @@ public class customer {
      *
      * @mbg.generated Sat May 23 21:26:19 CST 2020
      */
-    public Short getAddressId() {
+    public Integer getAddressId() {
         return addressId;
     }
 
@@ -224,7 +224,7 @@ public class customer {
      *
      * @mbg.generated Sat May 23 21:26:19 CST 2020
      */
-    public void setAddressId(Short addressId) {
+    public void setAddressId(Integer addressId) {
         this.addressId = addressId;
     }
 
@@ -350,4 +350,5 @@ public class customer {
         result = prime * result + ((getLastUpdate() == null) ? 0 : getLastUpdate().hashCode());
         return result;
     }
+
 }

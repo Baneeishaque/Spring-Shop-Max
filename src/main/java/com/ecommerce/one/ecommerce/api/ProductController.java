@@ -15,11 +15,11 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
+
 @GetMapping("view")
     public String listPage(Model model){
         List<product> allProducts = productService.findAllProducts();
         model.addAttribute("product", allProducts);
-
         return "product/product-view";
     }
 
