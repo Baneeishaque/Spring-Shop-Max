@@ -11,16 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/a")
 public class ProductController {
     @Autowired
     private ProductService productService;
 
-@GetMapping("view")
+@GetMapping("b")
     public String listPage(Model model){
         List<product> allProducts = productService.findAllProducts();
         model.addAttribute("product", allProducts);
         return "product/product-view";
     }
-
 }

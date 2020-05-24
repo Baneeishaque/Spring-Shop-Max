@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <title>ShopMax &mdash; Colorlib e-Commerce Template</title>
     <meta charset="utf-8">
@@ -26,6 +26,7 @@
         h1, h2, h3, h4, h5 {
             font-family: "Playfair Display", serif;
             color: #000000;
+            font-weight: bold;
         }
         .btn:hover, .btn:focus, .btn:active {
             -webkit-box-shadow: none !important;
@@ -60,11 +61,6 @@
             background: #fff;
             -webkit-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
             box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
-        }
-        .options {
-            padding-left: 50px;
-            padding-right: 50px;
-            font-size: small;
         }
     </style>
 </head>
@@ -131,16 +127,33 @@
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-8 text-center">
-                    <h1 class="mb-3">User Login</h1>
+                    <h1 class="mb-3">Sign Up</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 p-5 form-wrap">
                     <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="firstname" class="label">First Name</label>
+                            <input name="firstname" type="text" class="form-control" id="firstname" placeholder="First Name"
+                                   required>
+                        </div>
 
                         <div class="form-group">
-                            <label for="name" class="label">Username</label>
-                            <input name="username" type="text" class="form-control" id="name" placeholder="Username"
+                            <label for="lastname" class="label">Last Name</label>
+                            <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Last Name"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="label">Username</label>
+                            <input name="username" type="text" class="form-control" id="username" placeholder="Username"
+                                   required>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="email" class="label">Email</label>
+                            <input name="email" type="text" class="form-control" id="email" placeholder="Email"
                                    required>
                         </div>
 
@@ -149,25 +162,16 @@
                             <input name="password" type="password" class="form-control" id="pwd" placeholder="Password"
                                    required>
                         </div>
-                        <div class="justify-content-center d-flex">
-                            <div class="options">
-                                <a href="#">
-                                    <span>
-                                        Forgot Password
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="options">
-                                <a href="signup.html">
-                                    <span>
-                                        Sign Up
-                                    </span>
-                                </a>
-                            </div>
+
+                        <div class="form-group mb-4">
+                            <label for="pwd" class="label">Password</label>
+                            <input name="password" type="password" class="form-control" id="password" placeholder="Re-type Password"
+                                   required>
                         </div>
+
                         <div class="mt-4 text-center">
                             <div class="form-group">
-                                <input name="validate" type="submit" value="Login" id="login"
+                                <input name="validate" type="submit" value="Sign Up" id="signup"
                                        class="btn btn-primary py-3 px-5">
                             </div>
                         </div>
@@ -177,13 +181,13 @@
         </div>
     </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/main.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
