@@ -9,21 +9,25 @@
 </head>
 <body>
 This is Product list. Below are the Products.
-<div th:text="${product}"></div>
+
 <table border="1">
     <thead>
     <th>Name</th>
     <th>Price</th>
-    <th>Description</th>
     <th>Image</th>
-
+    <th>Description</th>
+    <th>Edit</th>
+    <th>Delete</th>
     </thead>
+    <div><a th:href="@{/product/add}">Add Product</a></div>
     <tbody>
     <tr th:each="pro:${product}">
         <td th:text="${pro.name}"></td>
         <td th:text="${pro.price}"></td>
+        <td th:img="${pro.image}" src="#" alt="product image" ></td>
         <td th:text="${pro.description}"></td>
-        <td th:text="${pro.image}"></td>
+        <td><a th:href="@{/product/edit(id=${pro.productid})}">Edit</a></td>
+        <td><a th:href="@{/product/delete(id=${pro.productid})}">Delete</a></td>
     </tr>
     </tbody>
 </table>
