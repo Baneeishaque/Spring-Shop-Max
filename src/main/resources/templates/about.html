@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head th:replace="~{include/head::head}">
-  </head>
+  <head th:replace="~{include/head::head}"></head>
   <body>
-  <header th:insert="~{include/header::header}">
-  </header>
+  <header th:replace="~{include/header::header}"></header>
     <div class="site-blocks-cover inner-page" data-aos="fade">
       <div class="container">
         <div class="row">
@@ -25,7 +23,7 @@
     <div class="custom-border-bottom py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a th:href="@{index.html}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">About</strong></div>
+          <div class="col-md-12 mb-0"><a th:href="@{index}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">About</strong></div>
         </div>
       </div>
     </div>
@@ -161,6 +159,6 @@
       </div>
     </div>
 
-    <footer th:replace="~{incude/footer::footer}"></footer>
+    <footer th:replace="~{include/footer::footer}"></footer>
   </body>
 </html>
