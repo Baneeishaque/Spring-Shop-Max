@@ -16,14 +16,4 @@ public class EcommerceApplication {
 		SpringApplication.run(EcommerceApplication.class, args);
 	}
 
-	@Bean
-	WebMvcConfigurer webMvcConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addResourceHandlers (ResourceHandlerRegistry registry) {
-				registry.addResourceHandler("/templates/**")
-				.addResourceLocations("classpath:/templates/");
-			}
-		};
-	}
 }
