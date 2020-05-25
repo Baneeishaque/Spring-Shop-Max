@@ -4,6 +4,9 @@ import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 @MapperScan("com.ecommerce.one.ecommerce.mapper")
@@ -13,4 +16,14 @@ public class EcommerceApplication {
 		SpringApplication.run(EcommerceApplication.class, args);
 	}
 
+	@Bean
+	WebMvcConfigurer webMvcConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addResourceHandlers (ResourceHandlerRegistry registry) {
+				registry.addResourceHandler("/templates/**")
+				.addResourceLocations("classpath:/templates/");
+			}
+		};
+	}
 }
