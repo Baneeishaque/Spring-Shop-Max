@@ -21,8 +21,8 @@ This is Product list. Below are the Products.
     <tbody>
     <tr th:each="pro:${product}">
         <td th:text="${pro.name}"></td>
-        <td th:text="${pro.price}"></td>
         <td th:text="${pro.description}"></td>
+        <td th:text="${pro.price}"></td>
         <td th:text="${pro.image}"></td>
     </tr>
     </tbody>

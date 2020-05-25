@@ -1,4 +1,4 @@
-package com.ecommerce.one.ecommerce.api;
+package com.ecommerce.one.ecommerce.controller;
 
 import com.ecommerce.one.ecommerce.domain.customer;
 import com.ecommerce.one.ecommerce.service.CustomerService;
