@@ -45,7 +45,7 @@ public class ProductController {
 
         model.addAttribute("product", product);
 
-        return "Demo/demo-add";
+        return "Demo/add-product";
     }
 
     @GetMapping("delete")
