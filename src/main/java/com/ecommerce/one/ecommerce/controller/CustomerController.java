@@ -6,20 +6,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping("/")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
+    @GetMapping("list")
+    public String listPage(Model model) {
+        List<customer> allCustomer = customerService.findAllCustomers();
+        model.addAttribute("customer", allCustomer);
+        return "Demo/customerview";
+    }
 
-    @GetMapping("view")
-    public String listPage(Model model){
-        List<customer> allCustomers = customerService.findAllProducts();
-        model.addAttribute("customer", allCustomers);
-        return "Demo/customerregisterview";
+    @GetMapping("signup")
+    public String addPage(Model model) {
+        model.addAttribute("customer", new customer());
+        return "/signup";
+    }
+
+    @PostMapping("save")
+    public String saveCustomer(customer customer) {
+        customerService.saveOrUpdate(customer);
+
+        //View, model
+        return "redirect:/signup";
     }
 }
+
+
