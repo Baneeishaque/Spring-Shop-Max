@@ -19,15 +19,15 @@ This is Product list. Below are the Products.
     <th>Edit</th>
     <th>Delete</th>
     </thead>
-    <div><a th:href="@{/product/add}">Add Product</a></div>
+    <div><a th:href="@{add}">Add Product</a></div>
     <tbody>
     <tr th:each="pro:${product}">
         <td th:text="${pro.name}"></td>
         <td th:text="${pro.price}"></td>
         <td th:img="${pro.image}" src="#" alt="product image" ></td>
         <td th:text="${pro.description}"></td>
-        <td><a th:href="@{/product/edit(id=${pro.productid})}">Edit</a></td>
-        <td><a th:href="@{/product/delete(id=${pro.productid})}">Delete</a></td>
+        <td><a th:href="@{/edit(id=${pro.productid})}">Edit</a></td>
+        <td><a th:href="@{/delete(id=${pro.productid})}">Delete</a></td>
     </tr>
     </tbody>
 </table>

@@ -42,3 +42,48 @@ h1, h2, h3, h4, h5 {
   -webkit-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 8px;
+}
+
+.header_cs {
+  font-size: 20px;
+}
+
+
+.header_cs {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  padding: 1em 2em;
+  display: block;
+  text-decoration: none;
+}
+
+.header_cs:hover {
+  background-color: #000;
+  color: white;
+}
+
+.customer_checking .container .row ul {
+  display: flex;
+}
+
+.customer_checking .container .row ul li {
+  padding-left: 10px;
+  padding-right: 10px;
+}

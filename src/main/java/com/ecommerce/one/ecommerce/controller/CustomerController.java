@@ -14,28 +14,22 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class CustomerController {
-    @Autowired
-    private CustomerService customerService;
-    @GetMapping("list")
-    public String listPage(Model model) {
-        List<customer> allCustomer = customerService.findAllCustomers();
-        model.addAttribute("customer", allCustomer);
-        return "Demo/customerview";
-    }
-
-    @GetMapping("signup")
-    public String addPage(Model model) {
-        model.addAttribute("customer", new customer());
-        return "/signup";
-    }
-
-    @PostMapping("save")
-    public String saveCustomer(customer customer) {
-        customerService.saveOrUpdate(customer);
-
-        //View, model
-        return "redirect:/signup";
-    }
+//    @Autowired
+//    private CustomerService customerService;
+//
+//    @GetMapping("signup")
+//    public String addPage(Model model) {
+//        model.addAttribute("customer", new customer());
+//        return "/signup";
+//    }
+//
+//    @PostMapping("save")
+//    public String saveCustomer(customer customer) {
+//        customerService.saveOrUpdate(customer);
+//
+//        //View, model
+//        return "redirect:/signup";
+//    }
 }
 
 

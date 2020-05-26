@@ -13,38 +13,41 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("")
 public class ProductController {
     @Autowired
     private ProductService productService;
 
-@GetMapping("b")
+    @GetMapping("ViewProduct")
     public String listPage(Model model){
         List<product> allProducts = productService.findAllProducts();
         model.addAttribute("product", allProducts);
-        return "/Demo/product-view";
+        return "/AdminProductView";
     }
 
     @GetMapping("add")
     public String addPage(Model model) {
         model.addAttribute("product", new product());
-
-        return "Demo/add-product";
+        return "/AddProduct";
     }
 
     @PostMapping("save")
     public String saveProduct(product product) {
         productService.saveOrUpdate(product);
-
-        return "redirect:/product/b";
+        return "redirect:/ViewProduct";
     }
 
+    @GetMapping("edit")
+    public String editProduct(@RequestParam("id") Integer id, Model model) {
+        product product = productService.getById(id);
+        model.addAttribute("product", new product());
+        return"/AddProduct";
+    }
 
     @GetMapping("delete")
     public String deletePage(@RequestParam("id") Integer id) {
         productService.deleteProduct(id);
-
-        return "redirect:/product/b";
+        return "redirect:/ViewProduct";
     }
 
 }
