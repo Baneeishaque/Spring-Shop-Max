@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/")
 public class ProductController {
     @Autowired
     private ProductService productService;
 
-@GetMapping("b")
+@GetMapping("shop")
     public String listPage(Model model){
         List<product> allProducts = productService.findAllProducts();
         model.addAttribute("product", allProducts);
-        return "Demo/product-view";
+        return "/shop";
     }
 
     @GetMapping("add")
@@ -32,26 +32,5 @@ public class ProductController {
         return "Demo/add-product";
     }
 
-    @PostMapping("save")
-    public String saveProduct(product product) {
-        productService.saveOrUpdate(product);
 
-        return "redirect:/product/b";
-    }
-
-    @GetMapping("edit")
-    public String editPage(@RequestParam("id") Integer id, Model model) {
-        product product = productService.getById(id);
-
-        model.addAttribute("product", product);
-
-        return "Demo/add-product";
-    }
-
-    @GetMapping("delete")
-    public String deletePage(@RequestParam("id") Integer id) {
-        productService.deleteProduct(id);
-
-        return "redirect:/product/b";
-    }
 }
