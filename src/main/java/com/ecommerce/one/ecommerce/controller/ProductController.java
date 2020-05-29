@@ -15,11 +15,13 @@ import java.util.List;
 @Controller
 @RequestMapping("")
 public class ProductController {
+
     @Autowired
     private ProductService productService;
 
     @GetMapping("ViewProduct")
-    public String listPage(Model model){
+    public String listPage(Model model) {
+
         List<product> allProducts = productService.findAllProducts();
         model.addAttribute("product", allProducts);
         return "/AdminProductView";
@@ -27,21 +29,24 @@ public class ProductController {
 
     @GetMapping("add")
     public String addPage(Model model) {
+
         model.addAttribute("product", new product());
         return "/AddProduct";
     }
 
     @PostMapping("save")
     public String saveProduct(product product) {
+
         productService.saveOrUpdate(product);
         return "redirect:/ViewProduct";
     }
 
     @GetMapping("edit")
     public String editProduct(@RequestParam("id") Integer id, Model model) {
+
         product product = productService.getById(id);
         model.addAttribute("product", new product());
-        return"/AddProduct";
+        return "/AddProduct";
     }
 
     @GetMapping("delete")

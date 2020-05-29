@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class ProductService {
+
     @Autowired
     private productMapper productmapper;
 
@@ -26,11 +27,14 @@ public class ProductService {
     }
 
     public void saveOrUpdate(product prod) {
+
         if (prod.getProductid() != null) {
+
             productmapper.updateByPrimaryKey(prod);
+
         } else {
+
             productmapper.insert(prod);
         }
     }
-
 }
