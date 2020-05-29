@@ -18,7 +18,6 @@
                     </form>
                 </div>
             </div>
-
             <div class="container">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="logo">
@@ -45,7 +44,6 @@
                                         </li>
                                     </ul>
                                 </li>
-
                                 <li class="active"><a th:href="@{shop}">Shop</a></li>
                                 <li><a href="#">Catalogue</a></li>
                                 <li><a th:href="@{about}">About</a></li>
@@ -54,12 +52,14 @@
                         </nav>
                     </div>
                     <div class="icons">
-                        <a th:href="@{#js-search-open}" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                        <a class="icons-btn d-inline-block js-search-open" th:href="@{#js-search-open}"><span
+                                class="icon-search"></span></a>
                         <a th:href="@{cart}" class="icons-btn d-inline-block bag">
                             <span class="icon-shopping-bag"></span>
                         </a>
                         <a th:href="@{login}" class="icons-btn d-inline-block"><span class="icon-user"></span></a>
-                        <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
+                        <a class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none" href="#"><span
+                                class="icon-menu"></span></a>
                     </div>
                 </div>
             </div>
