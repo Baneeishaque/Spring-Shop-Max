@@ -2,24 +2,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Document</title>
 </head>
 <body>
 <form action="/save" method="post" th:object="${product}">
-    <input type="hidden" name="id" th:value="${productid}"> <br/>
-    <input type="hidden" name="id" th:value="${wishlistid}"> <br/>
-    <input type="hidden" name="id" th:value="${adminid}"> <br/>
+    <input name="id" th:value="${productid}" type="hidden"> <br/>
+    <input name="id" th:value="${wishlistid}" type="hidden"> <br/>
+    <input name="id" th:value="${adminid}" type="hidden"> <br/>
 
 
-    Name: <input type="text" name="name" th:value="${name}"> <br/>
-    Description: <input type="text" name="description" th:value="${description}"> <br/>
-    Price: <input type="number" name="price" th:value="${price}"> <br/>
-    Image: <input type="file" name="image" th:value="${image}" onchange="readURL(this);" accept="image/"> <br/>
+    Name: <input name="name" th:value="${name}" type="text"> <br/>
+    Description: <input name="description" th:value="${description}" type="text"> <br/>
+    Price: <input name="price" th:value="${price}" type="number"> <br/>
+    Image: <input accept="image/" name="image" onchange="readURL(this);" th:value="${image}" type="file"> <br/>
 
-    <input type="submit" VALUE="Submit">
+    <input VALUE="Submit" type="submit">
 </form>
 </body>
 </html>

@@ -2,8 +2,9 @@ package com.ecommerce.one.ecommerce.mapper;
 
 import com.ecommerce.one.ecommerce.domain.wishlist;
 import com.ecommerce.one.ecommerce.domain.wishlistExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface wishlistMapper {
     /**

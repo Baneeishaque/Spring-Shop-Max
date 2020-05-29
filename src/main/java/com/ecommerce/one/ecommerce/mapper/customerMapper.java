@@ -2,8 +2,9 @@ package com.ecommerce.one.ecommerce.mapper;
 
 import com.ecommerce.one.ecommerce.domain.customer;
 import com.ecommerce.one.ecommerce.domain.customerExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface customerMapper {
     /**

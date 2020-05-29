@@ -22,26 +22,42 @@ public class HomeController {
     }
 
     @RequestMapping("contact")
-    public String contact() { return "contact"; }
+    public String contact() {
+        return "contact";
+    }
 
     @RequestMapping("cart")
-    public String cart() { return "cart"; }
+    public String cart() {
+        return "cart";
+    }
 
     @RequestMapping("login")
-    public String login() { return "login"; }
+    public String login() {
+        return "login";
+    }
 
     @RequestMapping("adminLogin")
-    public String adminLogin() {return "adminLogin";}
+    public String adminLogin() {
+        return "adminLogin";
+    }
 
     @RequestMapping("checkout")
-    public String checkout() {return "checkout";}
+    public String checkout() {
+        return "checkout";
+    }
 
     @RequestMapping("shopSingle")
-    public String shopSingle() {return "shopSingle";}
+    public String shopSingle() {
+        return "shop-single";
+    }
 
     @RequestMapping("signup")
-    public String signup() {return "signup";}
+    public String signup() {
+        return "signup";
+    }
 
     @RequestMapping("thankYou")
-    public String thankYou() {return "thankYou";}
+    public String thankYou() {
+        return "thankyou";
+    }
 }
