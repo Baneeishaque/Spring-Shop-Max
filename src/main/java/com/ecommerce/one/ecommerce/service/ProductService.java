@@ -1,5 +1,4 @@
 package com.ecommerce.one.ecommerce.service;
-
 import com.ecommerce.one.ecommerce.domain.product;
 import com.ecommerce.one.ecommerce.domain.productExample;
 import com.ecommerce.one.ecommerce.mapper.productMapper;
@@ -28,9 +27,11 @@ public class ProductService {
     public void saveOrUpdate(product prod) {
         if (prod.getProductid() != null) {
             productmapper.updateByPrimaryKey(prod);
+            productmapper.updateByPrimaryKeyWithBLOBs(prod);
         } else {
             productmapper.insert(prod);
         }
     }
+
 
 }
