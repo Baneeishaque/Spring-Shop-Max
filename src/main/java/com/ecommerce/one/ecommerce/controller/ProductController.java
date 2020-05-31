@@ -25,6 +25,13 @@ public class ProductController {
         return "/AdminProductView";
     }
 
+    @GetMapping("shop")
+    public String listProduct(Model model){
+        List<product> allProducts = productService.findAllProducts();
+        model.addAttribute("product", allProducts);
+        return "/shop";
+    }
+
     @GetMapping("addProduct")
     public String addPage(Model model) {
         model.addAttribute("product", new product());

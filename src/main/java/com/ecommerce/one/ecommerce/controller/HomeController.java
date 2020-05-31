@@ -11,11 +11,6 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("shop")
-    public String shop() {
-        return "shop";
-    }
-
     @RequestMapping("about")
     public String about() {
         return "about";
