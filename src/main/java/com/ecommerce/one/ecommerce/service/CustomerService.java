@@ -24,9 +24,9 @@ public class CustomerService {
         }
     }
 
-    public customer accessUser(Integer id, String username, String password) {
+    public customer accessCustomer(Integer customeriid, String username, String password) {
 
-        return customermapper.findUser(id, username, password);
+        return customermapper.findCustomer(username, password);
     }
 
 

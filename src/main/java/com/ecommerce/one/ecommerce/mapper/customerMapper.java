@@ -95,7 +95,6 @@ public interface customerMapper {
      */
     int updateByPrimaryKey(customer record);
 
-    @Select("SELECT * FROM customer WHERE customeriid = #{customeriid} username = #{username} AND passwords = #{passwords}")
-    customer findUser(@Param("customeriid") Integer id, @Param("username") String username, @Param("passwords") String passwords);
-
+    @Select("SELECT * FROM customer WHERE username = #{username} AND passwords = #{passwords}")
+    customer findCustomer(@Param("username") String username, @Param("passwords") String passwords);
 }
