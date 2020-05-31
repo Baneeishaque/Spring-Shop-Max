@@ -15,7 +15,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 p-5 form-wrap">
-                    <form action="/save" method="post" th:object="${product}">
+                    <form action="/saveProduct" method="post" th:object="${product}">
 
                         <input type="hidden" name="id" id="productid" th:value="${productid}">
                         <input type="hidden" name="id" th:value="${wishlistid}"> <br/>

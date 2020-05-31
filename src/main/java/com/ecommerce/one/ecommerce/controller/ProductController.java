@@ -25,26 +25,26 @@ public class ProductController {
         return "/AdminProductView";
     }
 
-    @GetMapping("add")
+    @GetMapping("addProduct")
     public String addPage(Model model) {
         model.addAttribute("product", new product());
         return "/AddProduct";
     }
 
-    @PostMapping("save")
+    @PostMapping("saveProduct")
     public String saveProduct(product product) {
         productService.saveOrUpdate(product);
         return "redirect:/ViewProduct";
     }
 
-    @GetMapping("edit")
+    @GetMapping("editProduct")
     public String editProduct(@RequestParam("id") Integer id, Model model) {
         product product = productService.getById(id);
         model.addAttribute("product", new product());
         return"/AddProduct";
     }
 
-    @GetMapping("delete")
+    @GetMapping("deleteProduct")
     public String deletePage(@RequestParam("id") Integer id) {
         productService.deleteProduct(id);
         return "redirect:/ViewProduct";
