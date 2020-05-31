@@ -1,6 +1,7 @@
 package com.ecommerce.one.ecommerce.controller;
 
 import com.ecommerce.one.ecommerce.exception.NotEnoughProductException;
+import com.ecommerce.one.ecommerce.exception.NotEnoughProductsInStockException;
 import com.ecommerce.one.ecommerce.service.ProductService;
 import com.ecommerce.one.ecommerce.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,11 +40,11 @@ public class ShoppingCartController {
     }
 
     @GetMapping("/shoppingCart/checkout")
-    public ModelAndView checkout() {
+    public ModelAndView checkout() throws NotEnoughProductException {
         try {
             shoppingCartService.checkout();
-        } catch (NotEnoughProductException e) {
-            return shoppingCart().addObject("outOfStockMessage", e.getMessage());
+        } catch (NotEnoughProductsInStockException e) {
+            e.printStackTrace();
         }
         return shoppingCart();
     }
