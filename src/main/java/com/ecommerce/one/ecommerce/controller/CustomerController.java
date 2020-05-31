@@ -42,7 +42,7 @@ public class CustomerController {
         if (bind.hasErrors()){
             return "adminLogin";
         }
-        return "AdminProductView";
+        return "redirect:/ViewProduct";
     }
 }
 
