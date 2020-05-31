@@ -32,10 +32,10 @@ public class HomeController {
     public String checkout() {return "checkout";}
 
     @RequestMapping("shopSingle")
-    public String shopSingle() {return "shopSingle";}
+    public String shopSingle() {return "shop-single";}
 
     @RequestMapping("thankYou")
-    public String thankYou() {return "thankYou";}
+    public String thankYou() {return "thankyou";}
 
     @RequestMapping("signup")
     public String signup() {return "signup";}

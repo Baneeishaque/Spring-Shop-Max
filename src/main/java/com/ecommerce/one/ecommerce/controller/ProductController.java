@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,6 +26,14 @@ public class ProductController {
         model.addAttribute("product", allProducts);
         return "/AdminProductView";
     }
+
+    @GetMapping("addToCart")
+    public String addProductToCart(Model model) {
+        model.addAttribute("product", new product());
+        return "/cart";
+    }
+
+
 
     @GetMapping("shop")
     public String listProduct(Model model){
