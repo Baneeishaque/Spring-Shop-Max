@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("")
 public class ProductController {
     @Autowired
     private ProductService productService;
