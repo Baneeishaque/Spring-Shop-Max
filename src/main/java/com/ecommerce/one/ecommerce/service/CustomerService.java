@@ -13,24 +13,21 @@ public class CustomerService {
     @Autowired
     private customerMapper customermapper;
 
-    public List<customer> findAllCustomers() {
-        return customermapper.selectByExample(new customerExample());
-    }
 
     public customer getById(Integer id) {
         return customermapper.selectByPrimaryKey(id);
     }
 
-    public void deleteCustomer(Integer id) {
-        customermapper.deleteByPrimaryKey(id);
-    }
-
-    public void saveOrUpdate(customer Customer) {
+    public void save(customer Customer) {
         if (Customer.getCustomeriid() != null) {
-            customermapper.updateByPrimaryKey(Customer);
-        } else {
             customermapper.insert(Customer);
         }
     }
+
+    public customer accessUser(Integer id, String username, String password) {
+
+        return customermapper.findUser(id, username, password);
+    }
+
 
 }

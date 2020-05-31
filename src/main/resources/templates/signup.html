@@ -18,8 +18,6 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 p-5 form-wrap">
                     <form action="/saveCustomer" method="POST" th:object="${customer}">
-
-
                         <div class="form-group">
                             <label for="fullName" class="label">FullName</label>
                             <input name="fullName" type="text" th:value="${full_name}" class="form-control" id="fullName" placeholder="enter your fullName"

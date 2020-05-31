@@ -4,6 +4,7 @@ import com.ecommerce.one.ecommerce.domain.customer;
 import com.ecommerce.one.ecommerce.domain.customerExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 public interface customerMapper {
     /**
@@ -93,4 +94,8 @@ public interface customerMapper {
      * @mbg.generated Sun May 24 14:31:24 CST 2020
      */
     int updateByPrimaryKey(customer record);
+
+    @Select("SELECT * FROM customer WHERE customeriid = #{customeriid} username = #{username} AND passwords = #{passwords}")
+    customer findUser(@Param("customeriid") Integer id, @Param("username") String username, @Param("passwords") String passwords);
+
 }
