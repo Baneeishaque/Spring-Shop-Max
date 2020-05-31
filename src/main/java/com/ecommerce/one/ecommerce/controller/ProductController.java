@@ -3,13 +3,14 @@ package com.ecommerce.one.ecommerce.controller;
 import com.ecommerce.one.ecommerce.domain.product;
 import com.ecommerce.one.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -39,7 +40,10 @@ public class ProductController {
     }
 
     @PostMapping("saveProduct")
-    public String saveProduct(product product) {
+    public String saveProduct(product product, MultipartFile file) throws IOException {
+        byte[] image = file.getBytes();
+        product.setImage(image);
+        product.setContnttype(file.getContentType());
         productService.saveOrUpdate(product);
         return "redirect:/ViewProduct";
     }
@@ -56,5 +60,14 @@ public class ProductController {
         productService.deleteProduct(id);
         return "redirect:/ViewProduct";
     }
+
+    @GetMapping(value = "/image/{id}")
+    public ResponseEntity<byte[]> getImage(@PathVariable("id") Integer id) {
+        product prd = productService.getById(id);
+        byte[] image = prd.getImage();
+        String contentType =prd.getContnttype();
+        return ResponseEntity.ok().contentType(MediaType.valueOf(contentType)).body(image);
+    }
+
 
 }

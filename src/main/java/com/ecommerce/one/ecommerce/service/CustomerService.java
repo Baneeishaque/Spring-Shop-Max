@@ -19,12 +19,12 @@ public class CustomerService {
     }
 
     public void save(customer Customer) {
-        if (Customer.getCustomeriid() != null) {
+        if (Customer.getUsername() != null) {
             customermapper.insert(Customer);
         }
     }
 
-    public customer accessCustomer(Integer customeriid, String username, String password) {
+    public customer accessCustomer( String username, String password) {
 
         return customermapper.findCustomer(username, password);
     }

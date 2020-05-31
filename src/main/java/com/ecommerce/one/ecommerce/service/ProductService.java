@@ -5,6 +5,7 @@ import com.ecommerce.one.ecommerce.mapper.productMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +20,14 @@ public class ProductService {
 
     public product getById(Integer id) {
         return productmapper.selectByPrimaryKey(id);
+    }
+
+    public byte[] getImage(Integer id){
+        product prd = this.getById(id);
+        if(prd != null) {
+            return prd.getImage();
+        }
+        return new byte[]{};
     }
 
     public void deleteProduct(Integer id) {

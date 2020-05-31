@@ -15,7 +15,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 p-5 form-wrap">
-                    <form action="/saveProduct" method="post" th:object="${product}">
+                    <form action="/saveProduct" method="post" th:object="${product}" enctype="multipart/form-data">
 
                         <input type="hidden" name="id" id="productid" th:value="${productid}">
                         <input type="hidden" name="id" th:value="${wishlistid}"> <br/>
@@ -41,7 +41,7 @@
 
                         <div class="form-group mb-4">
                             <label for="image" class="label">Image</label>
-                            <input name="price" type="file" th:value="${image}" class="form-control" id="image" placeholder="Image Of the Product"
+                            <input name="file" type="file" th:value="${image}" class="form-control" id="image" placeholder="Image Of the Product"
                                    required>
                         </div>
 

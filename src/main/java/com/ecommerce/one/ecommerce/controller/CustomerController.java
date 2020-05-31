@@ -23,7 +23,7 @@ public class CustomerController {
 
     @PostMapping("accessCustomer")
     public String loginUser(customer customer, BindingResult bind) {
-        customer cust = customerService.accessCustomer(customer.getCustomeriid(), customer.getUsername(), customer.getPasswords());
+        customer cust = customerService.accessCustomer(customer.getUsername(), customer.getPasswords());
         if (cust == null){
             bind.rejectValue("username","Customer not registered");
         }

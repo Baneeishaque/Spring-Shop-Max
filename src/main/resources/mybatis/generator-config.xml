@@ -34,24 +34,24 @@
         </javaClientGenerator>
 
 
-        <table schema="ecommerceone" tableName="a" domainObjectName="a">
-        </table>
-        <table schema="ecommerceone" tableName="address" domainObjectName="address">
-        </table>
-        <table schema="ecommerceone" tableName="admin" domainObjectName="admin">
-        </table>
-        <table schema="ecommerceone" tableName="customer" domainObjectName="customer">
-        </table>
-        <table schema="ecommerceone" tableName="orders" domainObjectName="orders">
-        </table>
-        <table schema="ecommerceone" tableName="payment" domainObjectName="payment">
-        </table>
+<!--        <table schema="ecommerceone" tableName="a" domainObjectName="a">-->
+<!--        </table>-->
+<!--        <table schema="ecommerceone" tableName="address" domainObjectName="address">-->
+<!--        </table>-->
+<!--        <table schema="ecommerceone" tableName="admin" domainObjectName="admin">-->
+<!--        </table>-->
+<!--        <table schema="ecommerceone" tableName="customer" domainObjectName="customer">-->
+<!--        </table>-->
+<!--        <table schema="ecommerceone" tableName="orders" domainObjectName="orders">-->
+<!--        </table>-->
+<!--        <table schema="ecommerceone" tableName="payment" domainObjectName="payment">-->
+<!--        </table>-->
         <table schema="ecommerceone" tableName="product" domainObjectName="product">
         </table>
-        <table schema="ecommerceone" tableName="shipping" domainObjectName="shipping">
-        </table>
-        <table schema="ecommerceone" tableName="wishlist" domainObjectName="wishlist">
-        </table>
+<!--        <table schema="ecommerceone" tableName="shipping" domainObjectName="shipping">-->
+<!--        </table>-->
+<!--        <table schema="ecommerceone" tableName="wishlist" domainObjectName="wishlist">-->
+<!--        </table>-->
 
 
     </context>
