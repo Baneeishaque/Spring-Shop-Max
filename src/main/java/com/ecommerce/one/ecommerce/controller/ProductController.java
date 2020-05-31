@@ -68,6 +68,4 @@ public class ProductController {
         String contentType =prd.getContnttype();
         return ResponseEntity.ok().contentType(MediaType.valueOf(contentType)).body(image);
     }
-
-
 }

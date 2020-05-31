@@ -41,7 +41,7 @@
 
                         <div class="form-group mb-4">
                             <label for="image" class="label">Image</label>
-                            <input name="file" type="file" th:value="${image}" class="form-control" id="image" placeholder="Image Of the Product"
+                            <input name="file" type="image" th:value="${image}" th:src="*{'/image/' + productid}" class="form-control" id="image" placeholder="Image Of the Product"
                                    required>
                         </div>
 

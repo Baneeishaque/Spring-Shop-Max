@@ -6,13 +6,11 @@ import com.ecommerce.one.ecommerce.mapper.customerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class CustomerService {
     @Autowired
     private customerMapper customermapper;
-
 
     public customer getById(Integer id) {
         return customermapper.selectByPrimaryKey(id);
@@ -28,6 +26,4 @@ public class CustomerService {
 
         return customermapper.findCustomer(username, password);
     }
-
-
 }

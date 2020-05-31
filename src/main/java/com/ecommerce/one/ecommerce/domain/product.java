@@ -73,6 +73,7 @@ public class product {
      *
      * @mbg.generated Sun May 31 22:51:03 CST 2020
      */
+
     private byte[] image;
 
     private Integer quantity;

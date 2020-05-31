@@ -42,7 +42,4 @@ public class ProductService {
             productmapper.insert(prod);
         }
     }
-
-
-
 }
