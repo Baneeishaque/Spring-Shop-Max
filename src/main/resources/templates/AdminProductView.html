@@ -11,6 +11,7 @@
                     <div class="site-blocks-table">
                         <table class="table table-bordered">
                             <thead>
+
                             <tr>
                                 <th class="product-thumbnail">Image</th>
                                 <th class="product-name">Product</th>
@@ -20,6 +21,7 @@
                                 <th class="product-remove">Remove</th>
                             </tr>
                             </thead>
+                            <div><a th:href="@{addProduct}">Add Product</a></div>
                             <tbody>
                             <tr th:each="pro:${product}">
                                 <td class="product-thumbnail" >
