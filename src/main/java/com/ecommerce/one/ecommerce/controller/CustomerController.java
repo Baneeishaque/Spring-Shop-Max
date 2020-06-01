@@ -9,12 +9,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 
 @Controller
 @RequestMapping("/")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
+
 
     @PostMapping("saveCustomer")
     public String saveCustomer(customer customer) {
@@ -23,7 +26,7 @@ public class CustomerController {
     }
 
     @PostMapping("accessCustomer")
-    public String loginUser(customer customer, BindingResult bind) {
+    public String loginUser(customer customer, BindingResult bind, HttpSession session) {
         customer cust = customerService.accessCustomer(customer.getUsername(), customer.getPasswords());
         if (cust == null){
             bind.rejectValue("username","Customer not registered");
@@ -31,6 +34,7 @@ public class CustomerController {
         if (bind.hasErrors()){
             return "login";
         }
+        session.setAttribute("user", cust);
         return "index";
     }
     @PostMapping("adminLogin")
