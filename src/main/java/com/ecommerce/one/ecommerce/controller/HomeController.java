@@ -31,9 +31,6 @@ public class HomeController {
     @RequestMapping("checkout")
     public String checkout() {return "checkout";}
 
-    @RequestMapping("shopSingle")
-    public String shopSingle() {return "shop-single";}
-
     @RequestMapping("thankYou")
     public String thankYou() {return "thankyou";}
 

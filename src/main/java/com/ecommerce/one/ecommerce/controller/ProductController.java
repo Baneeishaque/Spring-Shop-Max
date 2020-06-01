@@ -33,7 +33,11 @@ public class ProductController {
         model.addAttribute("product", new product());
         return "/cart";
     }
-
+    @RequestMapping("shopSingle")
+    public String shopSingle(@RequestParam("id") Integer id, Model model) {
+        product product = productService.getById(id);
+        model.addAttribute("product", new product());
+        return "shop-single";}
 
     @GetMapping("shop")
     public String listProduct(Model model){

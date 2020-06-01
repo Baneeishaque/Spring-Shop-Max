@@ -62,11 +62,16 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-5" >
+            <div class="row mb-5">
               <div class="col-lg-6 col-md-6 item-entry mb-4" th:each="pro:${product}">
-                <a href="/shopSingle" class="product-item md-height bg-gray d-block">
-                  <img th:src="${'/image/' + pro.productid}" alt="Image" class="img-fluid">
-                </a>
+
+                <a th:href="@{/shopSingle(id=${pro.productid})}">
+
+
+                    <img th:src="${'/image/' + pro.productid}" alt="Image" class="img-fluid">
+                  </a>
+
+
                 <h2 class="item-title"><a href="#"><span th:utext="${pro.name}"></span></a></h2>
                 <strong class="item-price"><span th:utext="${pro.price}"></span></strong>
                 <a href="/cart" th:action="@{addToCart}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary d-flex"><span>Add to Cart</span></a>

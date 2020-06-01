@@ -25,6 +25,11 @@ public class CustomerController {
         return "redirect:/index";
     }
 
+//    @PostMapping("saveUser")
+//    public String saveUser(user user) {
+//        customerService.save(user);
+//        return "redirect:/contact";
+    }
     @PostMapping("accessCustomer")
     public String loginUser(customer customer, BindingResult bind, HttpSession session) {
         customer cust = customerService.accessCustomer(customer.getUsername(), customer.getPasswords());
