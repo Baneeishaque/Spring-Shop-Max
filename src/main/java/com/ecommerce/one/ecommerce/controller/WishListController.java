@@ -23,8 +23,7 @@ public class WishListController {
     public String wishlist(Model model, product Product){
         List<wishlist> wishListProducts = wishListService.findAllProducts();
         model.addAttribute("wishlist", wishListProducts);
-
-        return "wishlist";
+        return "whishlist";
     }
 
     @GetMapping("saveToWishlist")
@@ -32,11 +31,8 @@ public class WishListController {
         wishlist wishList = new wishlist();
         wishList.setProductid(prodId);
         customer user = (customer) session.getAttribute("user");
-
         wishList.setCustomeriid(user.getCustomeriid());
-
         wishListService.addToWishList(wishList);
-
-        return "wishlist";
+        return "whishlist";
     }
 }

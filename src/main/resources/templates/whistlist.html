@@ -3,15 +3,14 @@
 <head th:replace="~{include/head::head}"></head>
 
 <body>
-    <header th:replace="~{include/header::header}"></header>
+<header th:replace="~{include/header::header}"></header>
     <div class="site-section">
         <div class="container">
             <div class="row mb-5">
-                <form class="col-md-12" method="post" action="/ViewProduct" th:object="${product}" enctype="multipart/form-data">
+                <form class="col-md-12" method="post" action="/wishlist" th:object="${product}" enctype="multipart/form-data">
                     <div class="site-blocks-table">
                         <table class="table table-bordered">
                             <thead>
-
                             <tr>
                                 <th class="product-thumbnail">Image</th>
                                 <th class="product-name">Product</th>
