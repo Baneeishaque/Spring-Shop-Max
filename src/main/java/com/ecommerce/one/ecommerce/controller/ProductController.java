@@ -81,4 +81,11 @@ public class ProductController {
         String contentType =prd.getContnttype();
         return ResponseEntity.ok().contentType(MediaType.valueOf(contentType)).body(image);
     }
+
+    @GetMapping("shopSingle")
+    public String detailsPage(@RequestParam("prodID") Integer id){
+        productService.getById(id);
+        return "shop-single";
+    }
 }
+
