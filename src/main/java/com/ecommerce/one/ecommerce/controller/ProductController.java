@@ -28,11 +28,6 @@ public class ProductController {
         return "/AdminProductView";
     }
 
-    @GetMapping("addToCart")
-    public String addProductToCart(Model model) {
-        model.addAttribute("product", new product());
-        return "/cart";
-    }
     @RequestMapping("shopSingle")
     public String shopSingle(@RequestParam("id") Integer id, Model model) {
         product product = productService.getById(id);

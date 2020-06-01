@@ -50,7 +50,7 @@
 <!--        </table>-->
 <!--        <table schema="ecommerceone" tableName="shipping" domainObjectName="shipping">-->
 <!--        </table>-->
-        <table schema="ecommerceone" tableName="wishlist" domainObjectName="wishlist">
+        <table schema="ecommerceone" tableName="shoppingcart" domainObjectName="ShoppingCart">
         </table>
 
 
