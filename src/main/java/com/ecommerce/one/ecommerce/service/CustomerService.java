@@ -13,7 +13,6 @@ public class CustomerService {
     @Autowired
     private customerMapper customermapper;
     private adminMapper adminmapper;
-//    private userMapper usermapper;
 
     public CustomerService(adminMapper adminmapper) {
         this.adminmapper = adminmapper;
@@ -27,11 +26,6 @@ public class CustomerService {
         if (Customer.getUsername() != null) {
             customermapper.insert(Customer);
         }
-    }
-//    public void save(user User) {
-//        if (User.getUsername() != null) {
-//            usermapper.insert(User);
-//        }
     }
 
     public customer accessCustomer( String username, String password) {
