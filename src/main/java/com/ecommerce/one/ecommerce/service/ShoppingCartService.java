@@ -1,19 +1,25 @@
 package com.ecommerce.one.ecommerce.service;
 
-import com.ecommerce.one.ecommerce.domain.product;
-import com.ecommerce.one.ecommerce.exception.NotEnoughProductException;
+import com.ecommerce.one.ecommerce.domain.ShoppingCart;
+import com.ecommerce.one.ecommerce.domain.ShoppingCartExample;
+import com.ecommerce.one.ecommerce.mapper.ShoppingCartMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-import java.util.Map;
+import java.util.List;
 
-public interface ShoppingCartService {
-    void addProduct(product product);
+@Service
+public class ShoppingCartService {
 
-    void removeProduct(product product);
+    @Autowired
+    private ShoppingCartMapper shoppingCartMapper;
 
-    Map<product, Integer> getProductsInCart();
+    public List<ShoppingCart> findAllProducts() {
+        return shoppingCartMapper.selectByExample(new ShoppingCartExample());
+    }
 
-    void checkout() throws NotEnoughProductException;
+    public void addToCart(ShoppingCart shoppingCart){
+        shoppingCartMapper.insert(shoppingCart);
+    }
 
-    BigDecimal getTotal();
 }
