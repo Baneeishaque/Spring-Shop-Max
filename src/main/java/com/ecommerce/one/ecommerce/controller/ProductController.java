@@ -1,6 +1,5 @@
 package com.ecommerce.one.ecommerce.controller;
 
-import com.ecommerce.one.ecommerce.domain.customer;
 import com.ecommerce.one.ecommerce.domain.product;
 import com.ecommerce.one.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.util.List;
 

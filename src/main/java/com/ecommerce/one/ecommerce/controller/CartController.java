@@ -3,7 +3,6 @@ package com.ecommerce.one.ecommerce.controller;
 import com.ecommerce.one.ecommerce.domain.ShoppingCart;
 import com.ecommerce.one.ecommerce.domain.customer;
 import com.ecommerce.one.ecommerce.domain.product;
-import com.ecommerce.one.ecommerce.domain.wishlist;
 import com.ecommerce.one.ecommerce.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,5 +37,11 @@ public class CartController {
         Product.setCustomeriid(user.getCustomeriid());
         shoppingCartService.addToCart(Product);
         return "redirect:/shop";
+    }
+
+    @GetMapping("removeProduct")
+    public String removePage(@RequestParam("id") Long id) {
+        shoppingCartService.removeProduct(id);
+        return "redirect:/cart";
     }
 }

@@ -9,19 +9,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ShoppingCartService {
+
+    private Map<product, Integer> products = new HashMap<>();
 
     @Autowired
     private ShoppingCartMapper shoppingCartMapper;
     @Autowired
     private productMapper prdMapper;
-    private ShoppingCart shoppingCart;
+
 
     public List<ShoppingCart> findAllProducts() {
         return shoppingCartMapper.selectByExample(new ShoppingCartExample());
+    }
+
+    public void removeProduct(Long id) {
+        shoppingCartMapper.deleteByPrimaryKey(id);
     }
 
     public void addToCart(ShoppingCart shoppingCart) {
@@ -31,8 +39,5 @@ public class ShoppingCartService {
     public List<product> productInfo(Integer id) {
         List<product> prods = prdMapper.getProductsByCustomerId(id);
         return prods;
-//        return shoppingCartMapper.getShoppingCartByCustomerId(id);
     }
-
-//    BigDecimal getCartTotalprice();
 }

@@ -98,9 +98,6 @@ public interface ShoppingCartMapper {
     int updateByPrimaryKey(ShoppingCart record);
 
     @Select("Select * from ShoppingCart sc LEFT JOIN product p ON p.productid = sc.productid WHERE customeriid = #{customeriid}")
-    List<ShoppingCart> productInfo(@Param("customeriid") Integer id, @Param("productid") Integer pid);
-
-
+    List<ShoppingCart> productInfo(@Param("customeriid") Integer id);
     ShoppingCart getShoppingCartByCustomerId(@Param("customerid") Integer customeriid);
-
 }

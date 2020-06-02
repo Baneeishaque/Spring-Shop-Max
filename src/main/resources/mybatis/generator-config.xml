@@ -46,12 +46,12 @@
 <!--        </table>-->
 <!--        <table schema="ecommerceone" tableName="payment" domainObjectName="payment">-->
 <!--        </table>-->
-<!--        <table schema="ecommerceone" tableName="product" domainObjectName="product">-->
-<!--        </table>-->
+        <table schema="ecommerceone" tableName="product" domainObjectName="product">
+        </table>
 <!--        <table schema="ecommerceone" tableName="shipping" domainObjectName="shipping">-->
 <!--        </table>-->
-        <table schema="ecommerceone" tableName="shoppingcart" domainObjectName="ShoppingCart">
-        </table>
+<!--        <table schema="ecommerceone" tableName="shoppingcart" domainObjectName="ShoppingCart">-->
+<!--        </table>-->
 
 
     </context>
