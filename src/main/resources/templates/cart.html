@@ -22,7 +22,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr th:each="pro:${product}">
+                  <tr th:each="pro:${shoppingCart}">
                     <td class="product-thumbnail" >
                       <img th:src="*{'/image/' + pro.productid}" alt="Image" class="img-fluid">
                     </td>

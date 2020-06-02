@@ -22,9 +22,11 @@ public class CartController {
     private ShoppingCartService shoppingCartService;
 
     @GetMapping("cart")
-    public String wishlist(Model model){
-        List<ShoppingCart> cartProducts = shoppingCartService.findAllProducts();
+    public String cart(Model model, HttpSession session){
+        customer user = (customer)session.getAttribute("user");
+        List<ShoppingCart> cartProducts = (List<ShoppingCart>) shoppingCartService.productInfo(user.getCustomeriid());
         model.addAttribute("shoppingCart", cartProducts);
+//        model.addAttribute("cartTotalprice", ShoppingCart.getCarttotalprice().toString());
         return "cart";
     }
 

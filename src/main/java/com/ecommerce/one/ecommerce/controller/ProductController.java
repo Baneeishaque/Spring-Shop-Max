@@ -1,5 +1,6 @@
 package com.ecommerce.one.ecommerce.controller;
 
+import com.ecommerce.one.ecommerce.domain.customer;
 import com.ecommerce.one.ecommerce.domain.product;
 import com.ecommerce.one.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -29,9 +29,10 @@ public class ProductController {
     }
 
     @RequestMapping("shopSingle")
-    public String shopSingle(@RequestParam("id") Integer id, Model model) {
-        product product = productService.getById(id);
-        model.addAttribute("product", new product());
+    public String shopSingle(@RequestParam("id") Integer id) {
+
+        productService.getById(id);
+
         return "shop-single";}
 
     @GetMapping("shop")

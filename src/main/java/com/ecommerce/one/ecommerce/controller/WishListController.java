@@ -33,6 +33,6 @@ public class WishListController {
         customer user = (customer) session.getAttribute("user");
         wishList.setCustomeriid(user.getCustomeriid());
         wishListService.addToWishList(wishList);
-        return "shop";
+        return "redirect:/shop";
     }
 }
