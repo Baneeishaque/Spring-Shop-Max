@@ -4,6 +4,8 @@ import com.ecommerce.one.ecommerce.domain.ShoppingCart;
 import com.ecommerce.one.ecommerce.domain.ShoppingCartExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
 public interface ShoppingCartMapper {
@@ -96,5 +98,9 @@ public interface ShoppingCartMapper {
     int updateByPrimaryKey(ShoppingCart record);
 
     @Select("Select * from ShoppingCart sc LEFT JOIN product p ON p.productid = sc.productid WHERE customeriid = #{customeriid}")
-    List<ShoppingCart> productInfo(@Param("customeriid") Integer id);
+    List<ShoppingCart> productInfo(@Param("customeriid") Integer id, @Param("productid") Integer pid);
+
+
+    ShoppingCart getShoppingCartByCustomerId(@Param("customerid") Integer customeriid);
+
 }

@@ -2,6 +2,7 @@ package com.ecommerce.one.ecommerce.domain;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class ShoppingCart {
     /**
@@ -208,6 +209,17 @@ public class ShoppingCart {
      *
      * @mbg.generated Mon Jun 01 21:39:19 CST 2020
      */
+
+    private List<product> products;
+
+    public List<product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<product> products) {
+        this.products = products;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {

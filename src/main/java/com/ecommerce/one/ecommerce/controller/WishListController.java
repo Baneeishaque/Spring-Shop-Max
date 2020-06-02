@@ -23,7 +23,7 @@ public class WishListController {
     public String wishlist(Model model, product Product){
         List<wishlist> wishListProducts = wishListService.findAllProducts();
         model.addAttribute("wishlist", wishListProducts);
-        return "wishlist";
+        return "whishlist";
     }
 
     @GetMapping("/saveToWishlist")

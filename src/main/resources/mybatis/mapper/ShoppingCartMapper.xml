@@ -300,4 +300,19 @@
       productid = #{productid,jdbcType=INTEGER}
     where cartID = #{cartid,jdbcType=BIGINT}
   </update>
+
+  <resultMap id="AdvancedMap" type="com.ecommerce.one.ecommerce.domain.ShoppingCart" extends="BaseResultMap">
+    <collection property="products" javaType="java.util.List" ofType="com.ecommerce.one.ecommerce.domain.product">
+      <id column="pid" property="productid"></id>
+      <result column="pimage" property="image"></result>
+      <result column="pname" property="name"></result>
+    </collection>
+  </resultMap>
+
+  <select id="getShoppingCartByCustomerId" resultMap="AdvancedMap">
+    SELECT sc.*, p.productid as pid, p.image as pimage, p.name as pname
+     FROM ShoppingCart sc LEFT JOIN product p ON sc.productid = p.productid WHERE sc.customeriid = #{customerid}
+  </select>
+
+
 </mapper>

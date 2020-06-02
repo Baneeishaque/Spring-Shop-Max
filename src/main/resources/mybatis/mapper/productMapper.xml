@@ -401,4 +401,8 @@
       CONTNTTYPE = #{contnttype,jdbcType=VARCHAR}
     where PRODUCTID = #{productid,jdbcType=INTEGER}
   </update>
+
+  <select id="getProductsByCustomerId" resultMap="BaseResultMap">
+   SELECT * FROM product p INNER JOIN ShoppingCart sc ON p.productid = sc.productid WHERE sc.customeriid = #{customerid}
+  </select>
 </mapper>

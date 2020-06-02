@@ -33,4 +33,7 @@ public class HomeController {
 
     @RequestMapping("signup")
     public String signup() {return "signup";}
+
+    @RequestMapping("whistlist")
+    public String whistlist() {return "whistlist";}
 }

@@ -7,7 +7,7 @@
     <div class="site-section">
         <div class="container">
             <div class="row mb-5">
-                <form class="col-md-12" method="post" action="/wishlist" th:object="${product}" enctype="multipart/form-data">
+                <form class="col-md-12" method="post" action="/wishlist" th:object="${wishlist}" enctype="multipart/form-data">
                     <div class="site-blocks-table">
                         <table class="table table-bordered">
                             <thead>
@@ -21,15 +21,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="pro:${product}">
+                            <tr th:each="pro:${wishlist}">
                                 <td class="product-thumbnail" >
-                                    <img th:src="@{'/image/' + ${pro.productid}}" alt="Image" class="img-fluid">
+                                    <img th:src="${pro.productid}}" alt="Image" class="img-fluid">
                                 </td>
                                 <td class="product-name">
-                                    <h2 class="h5 text-black"><span th:text="${pro.name}"></span></h2>
+                                    <h2 class="h5 text-black"><span th:text="${pro.wishlistid}"></span></h2>
                                 </td>
-                                <td th:text="${pro.price}"></td>
-                                <td th:text="${pro.description}"></td>
+                                <td th:text="${pro.wishlistid}"></td>
+                                <td th:text="${pro.customeriid}"></td>
                                 <td><a th:href="@{/editProduct(id=${pro.productid})}" class="btn btn-primary height-auto btn-sm">+</a></td>
                                 <td><a th:href="@{/deleteProduct(id=${pro.productid})}" class="btn btn-primary height-auto btn-sm">X</a></td>
                             </tr>

@@ -117,4 +117,6 @@ public interface productMapper {
      * @mbg.generated Sun May 31 22:51:03 CST 2020
      */
     int updateByPrimaryKey(product record);
+
+    List<product> getProductsByCustomerId(@Param("customerid") Integer customerid);
 }

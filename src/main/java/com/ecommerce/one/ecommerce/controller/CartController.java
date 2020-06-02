@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
+@RequestMapping("/")
 public class CartController {
     @Autowired
     private ShoppingCartService shoppingCartService;
@@ -24,9 +25,8 @@ public class CartController {
     @GetMapping("cart")
     public String cart(Model model, HttpSession session){
         customer user = (customer)session.getAttribute("user");
-        List<ShoppingCart> cartProducts = (List<ShoppingCart>) shoppingCartService.productInfo(user.getCustomeriid());
-        model.addAttribute("shoppingCart", cartProducts);
-//        model.addAttribute("cartTotalprice", ShoppingCart.getCarttotalprice().toString());
+        List<product> prods =  shoppingCartService.productInfo(user.getCustomeriid());
+        model.addAttribute("prods", prods);
         return "cart";
     }
 
