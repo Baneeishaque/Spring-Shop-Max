@@ -35,6 +35,6 @@ public class CartController {
         customer user = (customer) session.getAttribute("user");
         Product.setCustomeriid(user.getCustomeriid());
         shoppingCartService.addToCart(Product);
-        return "cart";
+        return "redirect:/shop";
     }
 }
