@@ -68,8 +68,8 @@
                 </a>
                 <h2 class="item-title"><a href="#"><span th:utext="${pro.name}"></span></a></h2>
                 <strong class="item-price"><span th:utext="${pro.price}"></span></strong>
-                <a href="/cart" th:action="@{/addToCart(prodId=${pro.getProductid()})}" th:object="${shoppingCart}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary d-flex"><span>Add to Cart</span></a>
-                <a href="/cart" th:href="@{/saveToWishlist(prodId=${pro.getProductid()})}"  th:object="${wishlist}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary d-flex"><span>Wish List</span></a>
+                <a th:href="@{/addToCart(prodId=${pro.getProductid()})}" th:object="${shoppingCart}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary d-flex"><span>Add to Cart</span></a>
+                <a th:href="@{/saveToWishlist(prodId=${pro.getProductid()})}"  th:object="${wishlist}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary d-flex"><span>Wish List</span></a>
               </div>
             </div>
           </div>
