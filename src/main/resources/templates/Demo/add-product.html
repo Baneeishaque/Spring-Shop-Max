@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
@@ -14,12 +14,12 @@
     <input type="hidden" name="id" th:value="${adminid}"> <br/>
 
 
-    Name: <input name="name" th:value="${name}" type="text"> <br/>
-    Description: <input name="description" th:value="${description}" type="text"> <br/>
-    Price: <input name="price" th:value="${price}" type="number"> <br/>
-    Image: <input accept="image/" name="image" onchange="readURL(this);" th:value="${image}" type="file"> <br/>
+    Name: <input type="text" name="name" th:value="${name}"> <br/>
+    Description: <input type="text" name="description" th:value="${description}"> <br/>
+    Price: <input type="number" name="price" th:value="${price}"> <br/>
+    Image: <input type="file" name="image" th:value="${image}" onchange="readURL(this);" accept="image/"> <br/>
 
-    <input VALUE="Submit" type="submit">
+    <input type="submit" VALUE="Submit">
 </form>
 </body>
 </html>

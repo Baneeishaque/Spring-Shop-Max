@@ -17,13 +17,11 @@ import java.util.List;
 @Controller
 @RequestMapping("")
 public class ProductController {
-
     @Autowired
     private ProductService productService;
 
     @GetMapping("ViewProduct")
-    public String listPage(Model model) {
-
+    public String listPage(Model model){
         List<product> allProducts = productService.findAllProducts();
         model.addAttribute("product", allProducts);
         return "/AdminProductView";
@@ -45,7 +43,6 @@ public class ProductController {
 
     @GetMapping("addProduct")
     public String addPage(Model model) {
-
         model.addAttribute("product", new product());
         return "/AddProduct";
     }
@@ -61,10 +58,9 @@ public class ProductController {
 
     @GetMapping("editProduct")
     public String editProduct(@RequestParam("id") Integer id, Model model) {
-
         product product = productService.getById(id);
         model.addAttribute("product", new product());
-        return "/AddProduct";
+        return"/AddProduct";
     }
 
     @GetMapping("deleteProduct")

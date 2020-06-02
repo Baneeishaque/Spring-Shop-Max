@@ -40,27 +40,6 @@
                     </div>
                 </form>
             </div>
-            <table border="1" class="table_header">
-                <thead>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Description</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                </thead>
-                <div class="d-flex"><a th:href="@{/add}">Add Product</a></div>
-                <tbody>
-                <tr th:each="pro:${product}">
-                    <td th:text="${pro.name}"></td>
-                    <td th:text="${pro.price}"></td>
-                    <td alt="product image" th:img="${pro.image}" th:src="${pro.image}"></td>
-                    <td th:text="${pro.description}"></td>
-                    <td><a th:href="@{/edit(id=${pro.productid})}">Edit</a></td>
-                    <td><a th:href="@{/delete(id=${pro.productid})}">Delete</a></td>
-                </tr>
-                </tbody>
-            </table>
         </div>
     </div>
     <footer th:replace="~{include/footer::footer}"></footer>

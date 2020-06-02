@@ -5,16 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-<footer th:fragment="footer">
+<footer th:fragment="footer" >
     <div class="site-footer custom-border-top">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <h3 class="footer-heading mb-4">Promo</h3>
-                    <a class="block-6" href="#">
-                        <img alt="Image placeholder" class="img-fluid rounded mb-4" th:src="@{images/about_1.jpg}">
+                    <a href="#" class="block-6">
+                        <img th:src="@{images/about_1.jpg}" alt="Image placeholder" class="img-fluid rounded mb-4">
                         <h3 class="font-weight-light  mb-0">Finding Your Perfect Shirts This Summer</h3>
-                        <p>Promo from July 15 &mdash; 25, 2019</p>
+                        <p>Promo from  July 15 &mdash; 25, 2019</p>
                     </a>
                 </div>
                 <div class="col-lg-5 ml-auto mb-5 mb-lg-0">
@@ -46,6 +46,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6 col-lg-3">
                     <div class="block-5 mb-5">
                         <h3 class="footer-heading mb-4">Contact Info</h3>
@@ -55,12 +56,13 @@
                             <li class="email">emailaddress@domain.com</li>
                         </ul>
                     </div>
+
                     <div class="block-7">
                         <form action="#" method="post">
-                            <label class="footer-heading" for="email_subscribe">Subscribe</label>
+                            <label for="email_subscribe" class="footer-heading">Subscribe</label>
                             <div class="form-group">
-                                <input class="form-control py-4" id="email_subscribe" placeholder="Email" type="text">
-                                <input class="btn btn-sm btn-primary" type="submit" value="Send">
+                                <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
+                                <input type="submit" class="btn btn-sm btn-primary" value="Send">
                             </div>
                         </form>
                     </div>
@@ -70,15 +72,14 @@
                 <div class="col-md-12">
                     <p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        All rights reserved | This template is made with <i aria-hidden="true" class="icon-heart"></i>
-                        by <a class="text-primary" target="_blank" th:href="@{https://colorlib.com}">Colorlib</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a th:href="@{https://colorlib.com}" target="_blank" class="text-primary">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
+
             </div>
         </div>
-    </div>
+        </div>
 </footer>
 </body>
 </html>

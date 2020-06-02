@@ -3,16 +3,17 @@
 <head th:replace="~{include/head::head}">
     <title>ShopMax &mdash; Colorlib e-Commerce Template</title>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" th:href="@{/css/my.css}">
 </head>
 <body>
-<header th:replace="~{include/header::header}"></header>
-<div class="section-gap-top bg-white aos-init aos-animate">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-8 text-center">
-                <h1 class="mb-3">Sign Up</h1>
+    <header th:replace="~{include/header::header}"></header>
+    <div class="section-gap-top bg-white aos-init aos-animate">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-3">Sign Up</h1>
+                </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 p-5 form-wrap">
@@ -47,12 +48,11 @@
                                        class="btn btn-primary py-3 px-5">
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<footer th:replace="~{include/footer::footer}"></footer>
+    <footer th:replace="~{include/footer::footer}"></footer>
 </body>
 </html>

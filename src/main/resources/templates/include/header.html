@@ -10,19 +10,20 @@
         <div class="site-navbar bg-white py-2">
             <div class="search-wrap">
                 <div class="container">
-                    <a class="search-close js-search-close" href="#"><span class="icon-close2"></span></a>
+                    <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
                     <form action="#" method="post">
                         <label>
-                            <input class="form-control" placeholder="Search keyword and hit enter..." type="text">
+                            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
                         </label>
                     </form>
                 </div>
             </div>
+
             <div class="container">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="logo">
                         <div class="site-logo">
-                            <a class="js-logo-clone" th:href="@{index}">ShopMax</a>
+                            <a th:href="@{index}" class="js-logo-clone">ShopMax</a>
                         </div>
                     </div>
                     <div class="main-nav d-none d-lg-block">
@@ -44,6 +45,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li class="active"><a th:href="@{shop}">Shop</a></li>
                                 <li><a th:href="@{whistlist}">Whistlist</a></li>
                                 <li><a th:href="@{about}">About</a></li>
@@ -52,14 +54,12 @@
                         </nav>
                     </div>
                     <div class="icons">
-                        <a class="icons-btn d-inline-block js-search-open" th:href="@{#js-search-open}"><span
-                                class="icon-search"></span></a>
-                        <a class="icons-btn d-inline-block bag" th:href="@{cart}">
+                        <a th:href="@{#js-search-open}" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                        <a th:href="@{cart}" class="icons-btn d-inline-block bag">
                             <span class="icon-shopping-bag"></span>
                         </a>
-                        <a class="icons-btn d-inline-block" th:href="@{login}"><span class="icon-user"></span></a>
-                        <a class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none" href="#"><span
-                                class="icon-menu"></span></a>
+                        <a th:href="@{login}" class="icons-btn d-inline-block"><span class="icon-user"></span></a>
+                        <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
                     </div>
                 </div>
             </div>

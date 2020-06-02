@@ -2,13 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{include/head::head}"></head>
 <link rel="stylesheet" th:href="@{/css/my.css}">
+
 <body>
-<header th:replace="~{include/header::header}"></header>
-<div class="section-gap-top bg-white aos-init aos-animate">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-8 text-center">
-                <h1 class="mb-3">User Login</h1>
+    <header th:replace="~{include/header::header}"></header>
+    <div class="section-gap-top bg-white aos-init aos-animate">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-3">User Login</h1>
+                </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 p-5 form-wrap">
@@ -31,20 +33,21 @@
                                     <span>
                                         Forgot Password
                                     </span>
-                            </a>
-                        </div>
-                        <div class="options">
-                            <a th:href="@{signup}">
+                                </a>
+                            </div>
+                            <div class="options">
+                                <a th:href="@{signup}">
                                     <span>
                                         Sign Up
                                     </span>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <div class="form-group">
-                            <input class="btn btn-primary py-3 px-5" id="login" name="validate" type="submit"
-                                   value="Login">
+                        <div class="mt-4 text-center">
+                            <div class="form-group">
+                                <input name="validate" type="submit" value="Login" id="login"
+                                       class="btn btn-primary py-3 px-5">
+                            </div>
                         </div>
                         <div class="mt-4 text-center">
                             <div class="col-md-12 mb-0"><a href="http://localhost:8080/adminLogin">Admin Login</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Admin Page</strong></div>
@@ -54,7 +57,6 @@
             </div>
         </div>
     </div>
-</div>
-<footer th:replace="~{include/footer::footer}"></footer>
+    <footer th:replace="~{include/footer::footer}"></footer>
 </body>
 </html>

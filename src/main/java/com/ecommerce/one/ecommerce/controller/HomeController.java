@@ -17,32 +17,22 @@ public class HomeController {
     }
 
     @RequestMapping("contact")
-    public String contact() {
-        return "contact";
-    }
+    public String contact() { return "contact"; }
 
     @RequestMapping("login")
-    public String login() {
-        return "login";
-    }
+    public String login() { return "login"; }
 
     @RequestMapping("adminLogin")
-    public String adminLogin() {
-        return "adminLogin";
-    }
+    public String adminLogin() {return "adminLogin";}
 
     @RequestMapping("checkout")
-    public String checkout() {
-        return "checkout";
-    }
+    public String checkout() {return "checkout";}
 
     @RequestMapping("thankYou")
     public String thankYou() {return "thankyou";}
 
     @RequestMapping("signup")
-    public String signup() {
-        return "signup";
-    }
+    public String signup() {return "signup";}
 
     @RequestMapping("whistlist")
     public String whistlist() {return "whistlist";}

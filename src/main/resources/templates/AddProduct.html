@@ -4,43 +4,40 @@
 <link rel="stylesheet" th:href="@{/css/my.css}">
 
 <body>
-<header th:replace="~{include/header::header}"></header>
+    <header th:replace="~{include/header::header}"></header>
 
-<div class="section-gap-top bg-white aos-init aos-animate">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-8 text-center">
-                <h1 class="mb-3">Add Product</h1>
+    <div class="section-gap-top bg-white aos-init aos-animate">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-3">Add Product</h1>
+                </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 p-5 form-wrap">
                     <form action="/saveProduct" method="post" th:object="${product}" enctype="multipart/form-data">
 
-                    <input id="productid" name="id" th:value="${productid}" type="hidden">
-                    <input name="id" th:value="${wishlistid}" type="hidden"> <br/>
-                    <input name="id" th:value="${adminid}" type="hidden"> <br/>
+                        <input type="hidden" name="id" id="productid" th:value="${productid}">
+                        <input type="hidden" name="id" th:value="${wishlistid}"> <br/>
+                        <input type="hidden" name="id" th:value="${adminid}"> <br/>
 
-                    <div class="form-group">
-                        <label class="label" for="name">Name</label>
-                        <input class="form-control" id="Name" name="name" placeholder="Name Of the Product" required
-                               th:value="${name}"
-                               type="text">
-                    </div>
+                        <div class="form-group">
+                            <label for="name" class="label">Name</label>
+                            <input name="name" type="text" th:value="${name}" class="form-control" id="Name" placeholder="Name Of the Product"
+                                   required>
+                        </div>
 
-                    <div class="form-group">
-                        <label class="label" for="description">Description</label>
-                        <input class="form-control" id="description" name="description"
-                               placeholder="Description Of the Product"
-                               required th:value="${description}"
-                               type="text">
-                    </div>
+                        <div class="form-group">
+                            <label for="description" class="label">Description</label>
+                            <input name="description" type="text" th:value="${description}" class="form-control" id="description" placeholder="Description Of the Product"
+                                   required>
+                        </div>
 
-                    <div class="form-group mb-4">
-                        <label class="label" for="number">Price</label>
-                        <input class="form-control" id="number" name="price" placeholder="Price Of the Product" required
-                               th:value="${price}"
-                               type="number">
-                    </div>
+                        <div class="form-group mb-4">
+                            <label for="number" class="label">Price</label>
+                            <input name="price" type="number" th:value="${price}" class="form-control" id="number" placeholder="Price Of the Product"
+                                   required>
+                        </div>
 
                         <div class="form-group mb-4">
                             <label for="image" class="label">Image</label>
@@ -48,18 +45,18 @@
                                    required>
                         </div>
 
-                    <div class="mt-4 text-center">
-                        <div class="form-group">
-                            <input class="btn btn-primary py-3 px-5" name="submit" type="submit"
-                                   value="Submit">
+                        <div class="mt-4 text-center">
+                            <div class="form-group">
+                                <input name="submit" type="submit" value="Submit"
+                                       class="btn btn-primary py-3 px-5">
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<footer th:replace="~{include/footer::footer}"></footer>
+    <footer th:replace="~{include/footer::footer}"></footer>
 </body>
 </html>
