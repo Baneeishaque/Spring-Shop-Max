@@ -11,26 +11,26 @@
             <div class="col-md-8 text-center">
                 <h1 class="mb-3">Admin Login</h1>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6 p-5 form-wrap">
-                <form action="#" method="POST">
+            <div class="row justify-content-center">
+                <div class="col-md-6 p-5 form-wrap">
+                    <form action="/adminLogin" method="POST">
 
-                    <div class="form-group">
-                        <label class="label" for="name">Username</label>
-                        <input class="form-control" id="name" name="username" placeholder="Username" required
-                               type="text">
-                    </div>
-
-                    <div class="form-group mb-4">
-                        <label class="label" for="pwd">Password</label>
-                        <input class="form-control" id="pwd" name="password" placeholder="Password" required
-                               type="password">
-                    </div>
-                    <div class="mt-4 text-center">
                         <div class="form-group">
-                            <input class="btn btn-primary py-3 px-5" id="login" name="validate" type="submit"
-                                   value="Login">
+                            <label for="name" class="label">Username</label>
+                            <input name="adminname"  type="text" class="form-control" id="name" placeholder="Username"
+                                   required>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="pwd" class="label">Password</label>
+                            <input name="adminpassword"  type="password" class="form-control" id="pwd" placeholder="Password"
+                                   required>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <div class="form-group">
+                                <input name="validate" type="submit" value="Login" id="login"
+                                       class="btn btn-primary py-3 px-5">
+                            </div>
                         </div>
                     </div>
                 </form>

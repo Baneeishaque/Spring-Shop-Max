@@ -1,5 +1,4 @@
 package com.ecommerce.one.ecommerce.service;
-
 import com.ecommerce.one.ecommerce.domain.product;
 import com.ecommerce.one.ecommerce.domain.productExample;
 import com.ecommerce.one.ecommerce.mapper.productMapper;
@@ -22,6 +21,14 @@ public class ProductService {
         return productmapper.selectByPrimaryKey(id);
     }
 
+    public byte[] getImage(Integer id){
+        product prd = this.getById(id);
+        if(prd != null) {
+            return prd.getImage();
+        }
+        return new byte[]{};
+    }
+
     public void deleteProduct(Integer id) {
         productmapper.deleteByPrimaryKey(id);
     }
@@ -31,7 +38,7 @@ public class ProductService {
         if (prod.getProductid() != null) {
 
             productmapper.updateByPrimaryKey(prod);
-
+            productmapper.updateByPrimaryKeyWithBLOBs(prod);
         } else {
 
             productmapper.insert(prod);

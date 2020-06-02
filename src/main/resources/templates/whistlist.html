@@ -3,15 +3,14 @@
 <head th:replace="~{include/head::head}"></head>
 
 <body>
-    <header th:replace="~{include/header::header}"></header>
+<header th:replace="~{include/header::header}"></header>
     <div class="site-section">
         <div class="container">
             <div class="row mb-5">
-                <form class="col-md-12" method="post" action="/ViewProduct" th:object="${product}" enctype="multipart/form-data">
+                <form class="col-md-12" method="post" action="/wishlist" th:object="${wishlist}" enctype="multipart/form-data">
                     <div class="site-blocks-table">
                         <table class="table table-bordered">
                             <thead>
-
                             <tr>
                                 <th class="product-thumbnail">Image</th>
                                 <th class="product-name">Product</th>
@@ -21,46 +20,30 @@
                                 <th class="product-remove">Remove</th>
                             </tr>
                             </thead>
-                            <div><a th:href="@{addProduct}">Add Product</a></div>
                             <tbody>
-                            <tr th:each="pro:${product}">
+                            <tr th:each="pro:${wishlist}">
                                 <td class="product-thumbnail" >
-                                    <img th:src="@{'/image/' + ${pro.productid}}" alt="Image" class="img-fluid">
+                                    <img th:src="${pro.productid}}" alt="Image" class="img-fluid">
                                 </td>
                                 <td class="product-name">
-                                    <h2 class="h5 text-black"><span th:text="${pro.name}"></span></h2>
+                                    <h2 class="h5 text-black"><span th:text="${pro.wishlistid}"></span></h2>
                                 </td>
-                                <td th:text="${pro.price}"></td>
-                                <td th:text="${pro.description}"></td>
+                                <td th:text="${pro.wishlistid}"></td>
+                                <td th:text="${pro.customeriid}"></td>
                                 <td><a th:href="@{/editProduct(id=${pro.productid})}" class="btn btn-primary height-auto btn-sm">+</a></td>
                                 <td><a th:href="@{/deleteProduct(id=${pro.productid})}" class="btn btn-primary height-auto btn-sm">X</a></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <button class="btn btn-primary btn-sm btn-block">Continue Shopping</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-outline-primary btn-sm btn-block">Go To Checkout</button>
+                    </div>
                 </form>
             </div>
-            <table border="1" class="table_header">
-                <thead>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Description</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                </thead>
-                <div class="d-flex"><a th:href="@{/add}">Add Product</a></div>
-                <tbody>
-                <tr th:each="pro:${product}">
-                    <td th:text="${pro.name}"></td>
-                    <td th:text="${pro.price}"></td>
-                    <td alt="product image" th:img="${pro.image}" th:src="${pro.image}"></td>
-                    <td th:text="${pro.description}"></td>
-                    <td><a th:href="@{/edit(id=${pro.productid})}">Edit</a></td>
-                    <td><a th:href="@{/delete(id=${pro.productid})}">Delete</a></td>
-                </tr>
-                </tbody>
-            </table>
         </div>
     </div>
     <footer th:replace="~{include/footer::footer}"></footer>

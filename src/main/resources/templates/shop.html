@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{include/head::head}"></head>
-<body>
-<header th:replace="~{include/header::header}"></header>
-<div class="site-blocks-cover inner-page" data-aos="fade">
-    <div class="container">
+  <body>
+    <header th:replace="~{include/header::header}"></header>
+
+    <div class="site-blocks-cover inner-page">
+      <div class="container">
         <div class="row">
             <div class="col-md-6 ml-auto order-md-2 align-self-start">
                 <div class="site-block-cover-content">
@@ -26,42 +27,23 @@
                     class="text-black">Shop</strong></div>
         </div>
     </div>
-</div>
-<div class="site-section">
-    <div class="container">
+
+    <div class="site-section">
+      <div class="container">
         <div class="row mb-5">
-            <div class="col-md-9 order-1">
-                <div class="row align">
-                    <div class="col-md-12 mb-5">
-                        <div class="float-md-left"><h2 class="text-black h5">Shop All</h2></div>
-                        <div class="d-flex">
-                            <div class="dropdown mr-1 ml-md-auto">
-                                <button aria-expanded="false" aria-haspopup="true"
-                                        class="btn btn-white btn-sm dropdown-toggle px-4" data-toggle="dropdown"
-                                        id="dropdownMenuOffset"
-                                        type="button">
-                                    Latest
-                                </button>
-                                <div aria-labelledby="dropdownMenuOffset" class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Men</a>
-                                    <a class="dropdown-item" href="#">Women</a>
-                                    <a class="dropdown-item" href="#">Children</a>
-                                </div>
-                            </div>
-                            <div class="btn-group">
-                                <button class="btn btn-white btn-sm dropdown-toggle px-4" data-toggle="dropdown"
-                                        id="dropdownMenuReference" type="button">Reference
-                                </button>
-                                <div aria-labelledby="dropdownMenuReference" class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Relevance</a>
-                                    <a class="dropdown-item" href="#">Name, A to Z</a>
-                                    <a class="dropdown-item" href="#">Name, Z to A</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Price, low to high</a>
-                                    <a class="dropdown-item" href="#">Price, high to low</a>
-                                </div>
-                            </div>
-                        </div>
+          <div class="col-md-9 order-1">
+            <div class="row align">
+              <div class="col-md-12 mb-5">
+                <div class="float-md-left"><h2 class="text-black h5">Shop All</h2></div>
+                <div class="d-flex">
+                  <div class="dropdown mr-1 ml-md-auto">
+                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Latest
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                      <a class="dropdown-item" href="#">Men</a>
+                      <a class="dropdown-item" href="#">Women</a>
+                      <a class="dropdown-item" href="#">Children</a>
                     </div>
                 </div>
                 <div class="row mb-5">
@@ -73,6 +55,18 @@
                         <strong class="item-price"><span th:utext="${pro.price}"></span></strong>
                     </div>
                 </div>
+              </div>
+            </div>
+            <div class="row mb-5" >
+              <div class="col-lg-6 col-md-6 item-entry mb-4" th:each="pro:${product}">
+                <a th:href="@{/shopSingle(prodID=${pro.getProductid()})}"  th:object="${product} " class="product-item md-height bg-gray d-block">
+                  <img th:src="${'/image/' + pro.productid}" alt="Image" class="img-fluid">
+                </a>
+                <h2 class="item-title"><a href="#"><span th:utext="${pro.name}"></span></a></h2>
+                <strong class="item-price"><span th:utext="${pro.price}"></span></strong>
+                <a th:href="@{/addToCart(prodId=${pro.getProductid()})}" th:object="${ShoppingCart}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary d-flex"><span>Add to Cart</span></a>
+                <a th:href="@{/saveToWishlist(prodId=${pro.getProductid()})}"  th:object="${wishlist}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary d-flex"><span>Wish List</span></a>
+              </div>
             </div>
             <div class="col-md-3 order-2 mb-5 mb-md-0">
                 <div class="border p-4 rounded mb-4">

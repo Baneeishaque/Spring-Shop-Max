@@ -11,11 +11,6 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("shop")
-    public String shop() {
-        return "shop";
-    }
-
     @RequestMapping("about")
     public String about() {
         return "about";
@@ -24,11 +19,6 @@ public class HomeController {
     @RequestMapping("contact")
     public String contact() {
         return "contact";
-    }
-
-    @RequestMapping("cart")
-    public String cart() {
-        return "cart";
     }
 
     @RequestMapping("login")
@@ -46,18 +36,14 @@ public class HomeController {
         return "checkout";
     }
 
-    @RequestMapping("shopSingle")
-    public String shopSingle() {
-        return "shop-single";
-    }
+    @RequestMapping("thankYou")
+    public String thankYou() {return "thankyou";}
 
     @RequestMapping("signup")
     public String signup() {
         return "signup";
     }
 
-    @RequestMapping("thankYou")
-    public String thankYou() {
-        return "thankyou";
-    }
+    @RequestMapping("whistlist")
+    public String whistlist() {return "whistlist";}
 }

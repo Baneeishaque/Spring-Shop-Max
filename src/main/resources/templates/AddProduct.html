@@ -12,10 +12,9 @@
             <div class="col-md-8 text-center">
                 <h1 class="mb-3">Add Product</h1>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6 p-5 form-wrap">
-                <form action="/save" method="post" th:object="${product}">
+            <div class="row justify-content-center">
+                <div class="col-md-6 p-5 form-wrap">
+                    <form action="/saveProduct" method="post" th:object="${product}" enctype="multipart/form-data">
 
                     <input id="productid" name="id" th:value="${productid}" type="hidden">
                     <input name="id" th:value="${wishlistid}" type="hidden"> <br/>
@@ -43,12 +42,11 @@
                                type="number">
                     </div>
 
-                    <div class="form-group mb-4">
-                        <label class="label" for="image">Image</label>
-                        <input class="form-control" id="image" name="price" placeholder="Image Of the Product" required
-                               th:value="${image}"
-                               type="file">
-                    </div>
+                        <div class="form-group mb-4">
+                            <label for="image" class="label">Image</label>
+                            <input name="file" type="file" th:value="${image}" class="form-control" id="image" placeholder="Image Of the Product"
+                                   required>
+                        </div>
 
                     <div class="mt-4 text-center">
                         <div class="form-group">

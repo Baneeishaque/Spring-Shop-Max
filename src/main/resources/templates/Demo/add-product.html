@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<form action="/save" method="post" th:object="${product}">
-    <input name="id" th:value="${productid}" type="hidden"> <br/>
-    <input name="id" th:value="${wishlistid}" type="hidden"> <br/>
-    <input name="id" th:value="${adminid}" type="hidden"> <br/>
+<form action="/saveProduct" method="post" th:object="${product}">
+    <input type="hidden" name="id" th:value="${productid}"> <br/>
+    <input type="hidden" name="id" th:value="${wishlistid}"> <br/>
+    <input type="hidden" name="id" th:value="${adminid}"> <br/>
 
 
     Name: <input name="name" th:value="${name}" type="text"> <br/>

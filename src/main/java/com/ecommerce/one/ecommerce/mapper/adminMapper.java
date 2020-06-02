@@ -2,7 +2,11 @@ package com.ecommerce.one.ecommerce.mapper;
 
 import com.ecommerce.one.ecommerce.domain.admin;
 import com.ecommerce.one.ecommerce.domain.adminExample;
+import java.util.List;
+
+import com.ecommerce.one.ecommerce.domain.customer;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -94,4 +98,7 @@ public interface adminMapper {
      * @mbg.generated Sun May 24 14:31:24 CST 2020
      */
     int updateByPrimaryKey(admin record);
+
+    @Select("SELECT * FROM admin WHERE adminname = #{adminname} AND adminpassword = #{adminpassword}")
+    admin findAdmin(@Param("adminname") String adminname, @Param("adminpassword") String adminpassword);
 }
